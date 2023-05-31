@@ -58,3 +58,4 @@ padre x (Nodo i r d)
     where
         valor Vacio = Nothing
         valor (Nodo _ r _) = Just r
+        

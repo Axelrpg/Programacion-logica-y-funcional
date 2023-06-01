@@ -1,7 +1,7 @@
 % pelicula(nombre, sinopsis, actores, duracion, idioma, año, enlaces, categoria, costo_obtencion)
 
 pelicula('Rápidos y Furiosos 9', 'Dom Toretto lleva una vida tranquila con Letty y su hijo, el pequeño Brian, pero saben que el peligro siempre acecha.', 'Vin Diesel, Michelle Rodriguez, Tyrese Gibson', 145, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg").
-pelicula('Godzilla vs. Kong', 'Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad.', 'Alexander Skarsgård, Millie Bobby Brown, Rebecca Hall', 113, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/bnuC6hu7AB5dYW26A3o6NNLlIlE.jpg").
+pelicula("Godzilla vs. Kong", 'Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad.', 'Alexander Skarsgård, Millie Bobby Brown, Rebecca Hall', 113, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/bnuC6hu7AB5dYW26A3o6NNLlIlE.jpg").
 pelicula('Mortal Kombat', 'Un boxeador fracasado descubre un secreto familiar que lo lleva a un torneo místico llamado Mortal Kombat, donde se encuentra con un grupo de guerreros que luchan hasta la muerte para salvar los reinos del malvado hechicero Shang Tsung.', 'Lewis Tan, Jessica McNamee, Josh Lawson', 110, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/3tZwNIVrax1IV5BkGzWTYMmjYI5.jpg").
 pelicula('El Escuadrón Suicida', 'Bienvenido al infierno, también conocido como Belle Reve, la prisión con la tasa de mortalidad más alta de los Estados Unidos de América.', 'Margot Robbie, Idris Elba, John Cena', 132, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/4AcvqhsaE26hshLKZhXmnlsIkcq.jpg").
 pelicula('El Hombre Araña: Sin Camino a Casa', 'Peter Parker se encuentra en un aprieto cuando su identidad secreta es revelada.', 'Tom Holland, Zendaya, Benedict Cumberbatch', 130, 'Inglés', 2021, 'enlace', "Acción", 4.99, "https://image.tmdb.org/t/p/w185_and_h278_bestv2/1z7ZQhga4AcSkQNqEU3Tf9XpxoX.jpg").
@@ -94,7 +94,7 @@ pelicula('El Hobbit: La Desolación de Smaug', 'Bilbo y los enanos continúan su
 pelicula('El Hobbit: La Batalla de los Cinco Ejércitos', 'Bilbo y los enanos se enfrentan a Smaug, mientras que otro ejército se acerca a Erebor.', 'Martin Freeman, Ian McKellen, Richard Armitage.', 144, 'Inglés', 2014, 'enlace', "Fantasía", 9.99, "https://i.blogs.es/4a1bfb/hobbit_3_batalla_de_los_cinco_ejercitos_poster_final/450_1000.jpg").
 
 imprimir_peliculas :-
-    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo),
+    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo, Imagen),
     write(Nombre), nl,
     write(Sinopsis), nl,
     write(Actores), nl,
@@ -104,11 +104,12 @@ imprimir_peliculas :-
     write(Enlaces), nl,
     write(Categoria), nl,
     write(Costo), nl,
+    write(Imagen), nl,
     nl,
     fail.
 
 imprimir_peliculas_categoria(Categoria) :-
-    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo),
+    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo, Imagen),
     write(Nombre), nl,
     write(Sinopsis), nl,
     write(Actores), nl,
@@ -118,12 +119,28 @@ imprimir_peliculas_categoria(Categoria) :-
     write(Enlaces), nl,
     write(Categoria), nl,
     write(Costo), nl,
+    write(Imagen), nl,
+    nl,
+    fail.
+
+imprimir_peliculas_nombre(Nombre) :-
+    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo, Imagen),
+    write(Nombre), nl,
+    write(Sinopsis), nl,
+    write(Actores), nl,
+    write(Duracion), nl,
+    write(Idioma), nl,
+    write(Anio), nl,
+    write(Enlaces), nl,
+    write(Categoria), nl,
+    write(Costo), nl,
+    write(Imagen), nl,
     nl,
     fail.
 
 imprimir_peliculas_estrenos :-
-    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo),
-    Anio >= 2015,
+    pelicula(Nombre, Sinopsis, Actores, Duracion, Idioma, Anio, Enlaces, Categoria, Costo, Imagen),
+    Anio >= 2020,
     write(Nombre), nl,
     write(Sinopsis), nl,
     write(Actores), nl,
@@ -133,5 +150,6 @@ imprimir_peliculas_estrenos :-
     write(Enlaces), nl,
     write(Categoria), nl,
     write(Costo), nl,
+    write(Imagen), nl,
     nl,
     fail.
